@@ -1,39 +1,3 @@
-# def is_visible(start, end, grid_map):
-#     x1, y1 = start
-#     x2, y2 = end
-
-#     dx = abs(x2 - x1)
-#     dy = abs(y2 - y1)
-
-#     sx = 1 if x2 > x1 else -1
-#     sy = 1 if y2 > y1 else -1
-
-#     err = dx - dy
-
-#     x, y = x1, y1
-
-#     while True:
-#         # check current cell
-#         if not grid_map.in_bounds(x, y):
-#             return False
-
-#         if grid_map.is_wall(x, y):
-#             return False
-
-#         # reached target
-#         if (x, y) == (x2, y2):
-#             return True
-
-#         e2 = 2 * err
-
-#         if e2 > -dy:
-#             err -= dy
-#             x += sx
-
-#         if e2 < dx:
-#             err += dx
-#             y += sy
-
 def is_visible(start, end, grid_map):
     x1, y1 = start
     x2, y2 = end

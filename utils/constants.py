@@ -1,4 +1,3 @@
 FREE = 0
 WALL = 1
 VICTIM = 2
-UNKNOWN = -1

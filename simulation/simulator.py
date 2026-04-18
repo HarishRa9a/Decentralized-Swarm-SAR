@@ -63,9 +63,6 @@ class Simulator:
             self.render()
             self._update_control_panel()
 
-            # if self.step_count == 1:
-            #     po = input()
-
         summary = self._build_mission_summary(rescued, target_victims)
         self.trace_logger.log_summary(summary)
 
@@ -89,7 +86,6 @@ class Simulator:
             self.agents,
             self.step_count,
             self.config,
-            None,
         )
 
     def _build_control_panel(self):

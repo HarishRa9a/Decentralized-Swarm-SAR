@@ -55,7 +55,7 @@ def _draw_chart(canvas, x0, y0, w, h, title, steps, values, color, ylabel):
 
     if not steps: return
 
-    min_x, max_x = 0, max(1, steps[-1])
+    max_x = max(1, steps[-1])
     
     max_y = 1.0
     if "Count" in ylabel:

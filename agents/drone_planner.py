@@ -8,15 +8,6 @@ class DronePlanner:
         self.agent = agent
         self.H = {}
 
-    def get_possible_actions(self):
-        x, y = self.agent.position
-        return [
-            (x + 1, y),
-            (x - 1, y),
-            (x, y + 1),
-            (x, y - 1),
-        ]
-
     def heuristic(self, pos):
         return 0
 
