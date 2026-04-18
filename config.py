@@ -105,7 +105,7 @@ class Config:
         # =========================
         # DRONE FAILURE SETTINGS
         # =========================
-        self.ENABLE_DRONE_FAILURES = True
+        self.ENABLE_DRONE_FAILURES = False
         self.FAILED_DRONE_COUNT = 2
         self.FAILURE_START_STEP = 20
         self.FAILURE_END_STEP = 120

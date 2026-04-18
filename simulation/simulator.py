@@ -70,6 +70,7 @@ class Simulator:
             print(i)
 
         self._update_control_panel()
+        self._wait_for_close()
 
     def render(self):
         if getattr(self.config, "SHOW_METRICS_DASHBOARD", False):
@@ -113,6 +114,28 @@ class Simulator:
     def _update_control_panel(self):
         if self.control_panel is not None:
             self.control_panel.update(self)
+
+    def _wait_for_close(self):
+        """Keep tkinter windows open until the user closes them."""
+        import tkinter as tk
+
+        # Update control panel status to show simulation is complete
+        if self.control_panel is not None and not self.control_panel.closed:
+            self.control_panel._stat_vars["Status"].set("Completed")
+            self.control_panel.running = False
+            try:
+                self.control_panel.root.mainloop()
+            except Exception:
+                pass
+            return
+
+        # If no control panel, check for metrics window
+        from visualization.metrics_visualizer import _metrics_window
+        if _metrics_window is not None:
+            try:
+                _metrics_window.mainloop()
+            except Exception:
+                pass
 
     def _deliver_messages(self):
         inbox_by_agent = {agent.id: [] for agent in self.agents}
