@@ -22,12 +22,6 @@ Use Python 3.10 or newer. Install the runtime dependencies:
 pip install numpy matplotlib
 ```
 
-The `auxp/arcade_renderer.py` file also supports an Arcade renderer experiment. If you want to work with that file, install Arcade too:
-
-```bash
-pip install arcade
-```
-
 ## Run Method
 
 From the `sar` folder, run:
@@ -36,30 +30,14 @@ From the `sar` folder, run:
 python main.py
 ```
 
-The program will ask for two inputs:
-
-```text
-Choose movement mode: 1. MAZE (default) / 2. FLOORPLAN
-Show metric visuals: 1. YES / 2. NO (default)
-```
-
-Run with defaults by pressing Enter for both prompts:
-
-```text
-Choose movement mode: 1. MAZE (default) / 2. FLOORPLAN
-Show metric visuals: 1. YES / 2. NO (default)
-```
-
-Choose floorplan mode and enable metrics:
-
-```text
-Choose movement mode: 1. MAZE (default) / 2. FLOORPLAN 2
-Show metric visuals: 1. YES / 2. NO (default) 1
+```bash
+The program will open configure window where you can set values to your needs:
 ```
 
 ## Configuration
 
 Most simulation settings are in `config.py`.
+These can be changed in config window.
 
 Common values to adjust:
 
@@ -80,9 +58,3 @@ When logging is enabled, the simulation writes:
 - `logs/mission_metrics.jsonl` - Mission metrics over time.
 
 These files can be inspected after a run to review coverage, overlap, detections, rescues, communication behavior, and mission summary data.
-
-## Notes
-
-- The default visualization path uses Matplotlib through `visualization/renderer.py`.
-- If rendering is slow, set `RENDER = False` in `config.py`.
-- If the metrics dashboard is not needed, answer `2` at the metrics prompt or set `SHOW_METRICS_DASHBOARD = False`.

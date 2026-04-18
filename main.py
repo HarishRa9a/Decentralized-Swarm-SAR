@@ -1,5 +1,5 @@
-from config import Config
-from config_gui import configure_with_gui
+from configure.config import Config
+from configure.config_gui import configure_with_gui
 from agents.drone_agent import DroneAgent
 from simulation.simulator import Simulator
 from agents.belief_state import BeliefState
